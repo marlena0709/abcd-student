@@ -13,4 +13,4 @@ docker run --rm -e "AUTH_TOKEN=$AUTH_TOKEN" -e "REPORT_TITLE=$REPORT_TITLE" -v "
     -addoninstall pscanrulesAlpha \
     -addoninstall pscanrulesBeta \
     -addoninstall graaljs \
-    -autorun /zap/wrk/zap.yaml"
+    -autorun /.zap/wrk/passive.yaml"
