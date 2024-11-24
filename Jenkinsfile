@@ -28,8 +28,8 @@ pipeline {
             steps {
                 echo 'DAST'
                 sh '''
-                    docker run --name juice-shop -d --rm \
-                    -p 4000:3000 bkimminich/juice-shop
+                    docker run --name juice-shop2 -d --rm \
+                    -p 4000:3000 bkimminich/juice-shop2
                     sleep 5
                 '''
                 sh '''
@@ -45,7 +45,7 @@ pipeline {
                     sh '''
                         docker cp zap:/zap/wrk/zap_html_report.html ${WORKSPACE}/zap_html_report.html
                         docker cp zap:/zap/wrk/zap_xml_report.xml ${WORKSPACE}/zap_xml_report.xml
-                        docker stop zap juice-shop
+                        docker stop zap juice-shop2
                         docker rm zap                                        
                     '''
                 }
