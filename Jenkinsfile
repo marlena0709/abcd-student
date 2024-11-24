@@ -57,7 +57,7 @@ pipeline {
             echo'Archiving results...'
             archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
             echo 'Sending reports to DefectDojo...'
-            defectDojoPublisher(artifact: 'result/zap_xml_report.xml', productName: 'Juice Shop', scanType: 'ZAP Scan', engagementName: 'marlenaaptak@gmail.com')
+            defectDojoPublisher(artifact: 'results/zap_xml_report.xml', productName: 'Juice Shop', scanType: 'ZAP Scan', engagementName: 'marlenaaptak@gmail.com')
         }
     }
 }
