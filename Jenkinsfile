@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo 'DAST'
                 sh '''
-                    docker run --name juice-shop2 -d --rm \
+                    docker run --name juice-shop -d --rm \
                     -p 3000:3000 bkimminich/juice-shop
                     sleep 5
                 '''
