@@ -33,7 +33,8 @@ pipeline {
                     sleep 5
                 '''
                 sh '''
-                    docker run --name zap \
+                    docker run --name zap --rm\
+                    --add-host=host.docker.internal:host-gateway \ 
                     -v /mnt/c/Users/marle/abcd-lab-master/abcd-student/.zap:/zap/wrk/:rw \
                     -t ghrc.io/zaproxy/zaproxy:stable \
                     bash -c zap.sh -cmd -addonupdate; zap.sh -cmd -addoninstal comunityScripts -addoninstall pscanrulesAlpha -addoninstal pscanrulesBeta -autorun /zap/wrk/passive.yaml" || true
