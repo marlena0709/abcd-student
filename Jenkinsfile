@@ -34,10 +34,10 @@ pipeline {
                 '''
                 sh '''
                     docker run --name zap \
-                    --add-host=host.docker.internal:host-gateway 
+                    --add-host=host.docker.internal:host-gateway \
                     -v /mnt/c/Users/marle/abcd-lab-master/abcd-student/.zap:/zap/wrk/:rw \
                     -t ghrc.io/zaproxy/zaproxy:stable \
-                    bash -c zap.sh -cmd -addonupdate; zap.sh -cmd -addoninstal comunityScripts -addoninstall pscanrulesAlpha -addoninstal pscanrulesBeta -autorun /zap/wrk/passive.yaml" || true
+                    bash -c zap.sh -cmd -addonupdate; zap.sh -cmd -addoninstall comunityScripts -addoninstall pscanrulesAlpha -addoninstall pscanrulesBeta -autorun /zap/wrk/passive.yaml" || true
                 '''
             }
             post{
